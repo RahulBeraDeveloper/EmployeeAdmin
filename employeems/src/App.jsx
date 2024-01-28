@@ -2,15 +2,30 @@ import Login from './component/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './component/Dashboard';
+import Home from './component/Home';
+import Employee from './component/Employee'
+import Profile from './component/Profile'
+import AddEmployee from './component/AddEmployee'
+import EditEmployee from './component/EditEmployee'
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route path='/adminlogin' element={<Login />} />
-          <Route path='/dashboard' element={<Dashboard />} />
-        </Routes>
+      <Routes>
+      <Route path='/' element={<Dashboard />}>
+        <Route path='' element={<Home />}></Route>
+        <Route path='/employee' element={<Employee />}></Route>
+        <Route path='/addEmployee' element={<AddEmployee />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/employeeEdit/:id' element={<EditEmployee />}></Route>
+
+      </Route>
+      <Route path='/login' element={<Login />}></Route>
+      {/* <Route path='/start' element={<Start />}></Route>
+      <Route path='/employeeLogin' element={<EmployeeLogin />}></Route>
+      <Route path='/employeedetail/:id' element={<EmployeeDetail />}></Route> */}
+    </Routes>
       </BrowserRouter>
     </>
   );

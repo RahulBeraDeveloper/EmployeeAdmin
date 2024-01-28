@@ -13,6 +13,6 @@ app.use(cors({
 app.use(express.json())
 app.use('/auth',adminRoute)
 
-app.listen(4500,()=>{
-    console.log("server is running")
+app.listen(8081,()=>{
+    console.log("server is running at 8081")
 })
